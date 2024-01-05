@@ -1,12 +1,10 @@
 
 
-export default function TabButton ({children}) {
-  function onClickHandler () {
-    console.log("Hello A13!");
-  }
+export default function TabButton ({children, onSelect}) {
+
   return (
     <li>
-      <button onClick={onClickHandler}>{children}</button>
+      <button onClick={onSelect}>{children}</button>
     </li>
   )
 }
