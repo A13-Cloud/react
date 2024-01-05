@@ -5,6 +5,10 @@ import TabButton from "./components/TabButton";
 
 function App() {
 
+  function onSelectHandler (selectedButton) {
+    console.log(selectedButton);
+  }
+
   return (
     <div>
       <Header/>
@@ -21,10 +25,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton>Component</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => onSelectHandler("component")}>Component</TabButton>
+            <TabButton onSelect={() => onSelectHandler("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => onSelectHandler("props")}>Props</TabButton>
+            <TabButton onSelect={() => onSelectHandler("state")}>State</TabButton>
           </menu>
         </section>
       </main>
