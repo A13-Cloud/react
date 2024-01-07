@@ -1,11 +1,15 @@
-import "./CoreConcept.css";
+import {CORE_CONCEPTS} from "../../data";
+import CoreConceptItem from "./CoreConceptItem/CoreConceptItem";
 
-export default function CoreConcept ({...concept}) {
+
+function CoreConcept () {
   return (
-    <li>
-      <img src={concept.image} alt={concept.title} />
-      <h3>{concept.title}</h3>
-      <p>{concept.description}</p>
-    </li>
-  );
+    <section id="core-concepts">
+    <h2>Core Concepts</h2>
+    <ul>
+      {CORE_CONCEPTS.map(conceptItem => <CoreConceptItem key={conceptItem.title} {...conceptItem}/>)}
+    </ul>
+  </section>)
 }
+
+export default CoreConcept;
