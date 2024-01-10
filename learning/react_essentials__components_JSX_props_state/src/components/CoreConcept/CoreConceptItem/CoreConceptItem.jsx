@@ -1,5 +1,3 @@
-import "./CoreConceptItem.css";
-
 export default function CoreConceptItem ({...concept}) {
   return (
     <li>

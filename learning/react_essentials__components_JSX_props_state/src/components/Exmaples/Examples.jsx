@@ -1,10 +1,11 @@
-import {useState} from "react";
+import { useState } from "react";
 
+import { EXAMPLES } from "../../data/data";
 import Tabs from "../Tabs";
 import TabButton from "../TabButton";
-
-import {EXAMPLES} from "../../data";
 import Section from "../Section/Section";
+
+import "./Examples.css";
 
 function Examples() {
   const [selectedTopic, setSelectedTopic] = useState();
@@ -32,7 +33,6 @@ function Examples() {
   return (
     <Section title="Examples" id="examples">
       <Tabs
-        ButtonsContainer="menu"
         buttons={
           <>
             <TabButton
