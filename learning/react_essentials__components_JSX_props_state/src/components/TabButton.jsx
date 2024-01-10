@@ -1,5 +1,3 @@
-
-
 export default function TabButton ({children, isSelectedTab, ...props}) {
 
   return (
