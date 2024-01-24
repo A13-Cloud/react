@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 
 export default function Player ({initialName, symbol}) {
   const [playerName, setPlayerName] = useState(initialName);
@@ -18,7 +18,6 @@ export default function Player ({initialName, symbol}) {
   if (isEditing) {
     editablePlayerName = <input type="text" required value={playerName} onChange={onChangeHandle}/>
     btnCaption = "Save";
-    
   }
 
   return (
