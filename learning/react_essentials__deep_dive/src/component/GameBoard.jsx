@@ -13,6 +13,9 @@ export default function GameBoard () {
             {row.map((col, colIndex) => (
               <li key={colIndex}>
 
+
+
+                
               </li>
             ))}
           </ol>b
