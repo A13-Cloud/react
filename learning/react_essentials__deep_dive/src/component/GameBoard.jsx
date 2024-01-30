@@ -15,7 +15,7 @@ export default function GameBoard () {
 
 
 
-                
+
               </li>
             ))}
           </ol>b
