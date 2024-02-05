@@ -8,14 +8,11 @@ const initialGameBoard = [
 export default function GameBoard ({onSelectSquare, turns}) {
   let gameBoard = initialGameBoard;
 
-  console.log(turns, "turns")
   for (let turn of turns) {
     const {square, player} = turn;
     const {row, col} = square;
     gameBoard[row][col] = player;
   }
-
-  console.log(gameBoard, "gameBoard");
 
   return (
     <ol id="game-board">
