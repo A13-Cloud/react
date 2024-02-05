@@ -15,6 +15,8 @@ export default function GameBoard ({onSelectSquare, turns}) {
     gameBoard[row][col] = player;
   }
 
+  console.log(gameBoard, "gameBoard");
+
   return (
     <ol id="game-board">
       {gameBoard.map((row, rowIndex) => (
