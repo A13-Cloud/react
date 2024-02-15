@@ -5,7 +5,7 @@ export default function Results ({input}) {
   const initialInvestment = resultsData[0].valueEndOfYear - resultsData[0].interest - resultsData[0].annualInvestment;
 
   return (
-    <tabel id="result">
+    <table id="result">
       <thead>
         <tr>
           <th>Year</th>
@@ -35,7 +35,6 @@ export default function Results ({input}) {
           );
         })}
       </tbody>
-
-    </tabel>
+    </table>
   )
 }
