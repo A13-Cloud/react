@@ -1,14 +1,6 @@
 import { useState } from 'react';
-import { styled } from "styled-components";
 import Button from "./Button.jsx";
-import CustomInput from "./Input.jsx";
-
-const Controls = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-`;
+import Input from "./Input.jsx";
 
 export default function AuthInputs() {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -31,25 +23,30 @@ export default function AuthInputs() {
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
   return (
-    <div id="auth-inputs">
-      <Controls>
-        <CustomInput
+    <div id="auth-inputs" className="w-full mx-auto max-w-sm p-8 raounded shadow-md bg-gradient-to-b from-stone-700 to-stone-700">
+      <div className="flex flex-col gap-2 mb-6">
+        <Input
             type="email"
             label="Email"
             $invalid={emailNotValid}
             // className={emailNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('email', event.target.value)}
         />
-        <CustomInput
+        <Input
             type="password"
             label="Password"
             $invalid={passwordNotValid}
             // className={passwordNotValid ? 'invalid' : undefined}
             onChange={(event) => handleInputChange('password', event.target.value)}
         />
-      </Controls>
-      <div className="actions">
-        <button type="button" className="text-button">Create a new account</button>
+      </div>
+      <div className="flex justify-end gap-4">
+        <button
+            type="button"
+            className="text-amber-400 hover:text-amber-500"
+        >
+          Create a new account
+        </button>
         <Button
             // className='button'
             onClick={handleLogin}
