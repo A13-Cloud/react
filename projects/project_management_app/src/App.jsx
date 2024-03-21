@@ -65,7 +65,7 @@ function App() {
     });
   }
 
-  console.log(projectsState);
+  // console.log(projectsState);
 
   let selectedProject = projectsState.projects.find(project => project.id === projectsState.selectedProjectId);
 
