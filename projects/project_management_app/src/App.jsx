@@ -11,6 +11,9 @@ function App() {
     projects: []
   });
 
+  function handleAddTask () {}
+
+  function handleDeleteTask () {}
   function handleStartAddProject () {
     setProjectsState(prevState => {
       return {
