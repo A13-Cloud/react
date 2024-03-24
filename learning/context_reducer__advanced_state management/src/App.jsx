@@ -67,10 +67,13 @@ function App() {
     });
   }
 
-  console.log(shoppingCart);
+  const ctxValue = {
+    items: shoppingCart.items,
+    addItemToCart: handleUpdateCartItemQuantity
+  }
 
   return (
-    <CartContext.Provider value={shoppingCart}>
+    <CartContext.Provider value={ctxValue}>
       <Header
         cart={shoppingCart}
         onUpdateCartItemQuantity={handleUpdateCartItemQuantity}
@@ -78,7 +81,7 @@ function App() {
       <Shop>
         {DUMMY_PRODUCTS.map((product) => (
           <li key={product.id}>
-            <Product {...product} onAddToCart={handleAddItemToCart} />
+            <Product {...product} />
           </li>
         ))}
       </Shop>
