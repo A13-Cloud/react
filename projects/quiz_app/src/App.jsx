@@ -1,4 +1,5 @@
 import Header from "./components/Header.jsx";
+import Quiz from "./components/Quiz.jsx";
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
     <>
       <Header/>
       <main>
-        {/*<Quiz/>*/}
+        <Quiz/>
       </main>
     </>
   )
