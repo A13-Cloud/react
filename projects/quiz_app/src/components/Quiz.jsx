@@ -11,14 +11,14 @@ function Quiz () {
 
   const quizIsComplete = activeQuestionIndex === QUESTIONS.length;
 
-  const handleSelectAnswer = useCallback(() => function handleSelectAnswer (selectedAnswer) {
+  const handleSelectAnswer = useCallback(function handleSelectAnswer (selectedAnswer) {
     console.log("Quiz ---> handleSelectAnswer");
     setUserAnswers((prevAnswer) => {
       return [...prevAnswer, selectedAnswer];
     });
   }, []);
 
-  const handleSkipAnswer = useCallback(() => handleSelectAnswer(null), []);
+  const handleSkipAnswer = useCallback(() => handleSelectAnswer(null), [handleSelectAnswer]);
 
   if (quizIsComplete) {
     return (
@@ -32,10 +32,15 @@ function Quiz () {
   const shuffledAnswers = [...QUESTIONS[activeQuestionIndex].answers];
   shuffledAnswers.sort(() => Math.random() - 0.5);
 
+  console.log("Quiz");
   return (
     <div id="quiz">
       <div id="question">
-        <QuestionTimer timeout={2000} onTimeout={handleSkipAnswer}/>
+        <QuestionTimer
+          timeout={10000}
+          key={activeQuestionIndex}
+          onTimeout={handleSkipAnswer}
+        />
         <h2>{QUESTIONS[activeQuestionIndex].text}</h2>
         <ul id="answers">
           {shuffledAnswers.map((answer) => {
