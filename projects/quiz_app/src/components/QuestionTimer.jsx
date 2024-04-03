@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function QuestionTimer ({timeout, onTimeout}) {
+function QuestionTimer ({timeout, onTimeout, answerState}) {
   const [remainingTime, setRemainingTime] = useState(timeout);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function QuestionTimer ({timeout, onTimeout}) {
     };
   }, []);
 
-  return <progress id="question-time" value={remainingTime} max={timeout}/>
+  return <progress style={{backgroundColor: answerState === "wrong" ? "red" : "green"}} id="question-time" value={remainingTime} max={timeout}/>
 }
 
 export default QuestionTimer;
