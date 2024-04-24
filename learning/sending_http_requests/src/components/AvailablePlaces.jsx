@@ -13,6 +13,7 @@ export default function AvailablePlaces({ onSelectPlace }) {
         setAvailablePlaces(resData.places);
       });
   }, []);
+  
 
   return (
     <Places
