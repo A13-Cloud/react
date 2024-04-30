@@ -9,7 +9,7 @@ export default function Login() {
   function handleSubmit (event) {
     event.preventDefault();
 
-    console.log(enteredValue)
+    console.log(enteredValue);
   }
 
   function handleInputChange (identifier, value) {
