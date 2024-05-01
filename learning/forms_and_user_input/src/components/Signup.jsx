@@ -13,7 +13,6 @@ export default function Signup() {
 
     if (data.password !== data["confirm-password"]) {
       setSomePassword(true);
-      console.log("WORKED")
     }
 
     event.target.reset();
