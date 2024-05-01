@@ -47,6 +47,7 @@ export default function Login() {
   return (
     <form onSubmit={handleSubmit}>
       <h2>Login</h2>
+
       <div className="control-row">
         <Input
           label="Email"
@@ -58,6 +59,7 @@ export default function Login() {
           onBlur={() => handleInputBlur("email")}
           onChange={(event) => handleInputChange("email", event.target.value)}
         />
+
         <Input
           label="Password"
           id="password"
@@ -69,6 +71,7 @@ export default function Login() {
           onChange={(event) => handleInputChange("password", event.target.value)}
         />
       </div>
+      
       <p className="form-actions">
         <button className="button button-flat">Reset</button>
         <button className="button">Login</button>
