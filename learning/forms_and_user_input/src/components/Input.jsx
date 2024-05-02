@@ -1,5 +1,3 @@
-
-
 function Input ({label, id, error, ...props}) {
 
 
