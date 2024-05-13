@@ -1,30 +1,11 @@
 // import { createStore } from "redux";
-import {configureStore, createSlice} from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
-const initialState = {
-  counter: 0,
-  showCounter: true,
-};
+import counterReducer from "./slice/counter";
+import authenticatedReducer from "./slice/authenticated";
 
-const counterSlice = createSlice({
-  name: "counter",
-  initialState,
-  reducers: {
-    increment (state) {
-      state.counter++;
-    },
-    increase (state, action) {
-      state.counter += action.payload;
-    },
-    decrement (state) {
-      state.counter++;
-    },
-    toggleCounter (state) {
-      state.showCounter = !state.showCounter;
-    }
-  }
-})
 
+// For use basic redux and create slice.
 // const createReducer = (state = initialState, action) => {
 //
 //   if (action.type === "increment") {
@@ -59,10 +40,12 @@ const counterSlice = createSlice({
 // }
 
 const store = configureStore({
-  reducer: counterSlice.reducer,
-  // reducer: {counter: counterSlice.reducer}
+  reducer: {
+    counter: counterReducer,
+    authenticated: authenticatedReducer
+  },
+  // reducer: counterSlice.slice, -> If we have one slice
+  // reducer: {counter: counterSlice.slice} -> If we have more slices
 });
-
-export const counterActions = counterSlice.actions;
 
 export default store;
