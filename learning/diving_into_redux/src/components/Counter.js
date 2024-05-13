@@ -7,15 +7,15 @@ import classes from './Counter.module.css';
 
 const Counter = () => {
   const dispatch = useDispatch();
-  const counter = useSelector(state => state.counter);
-  const showCounter = useSelector(state => state.showCounter);
+  const counter = useSelector(state => state.counter.counter);
+  const showCounter = useSelector(state => state.counter.showCounter);
 
   const incrementHandler = () => {
     dispatch(counterActions.increment());
   }
 
   const increase = () => {
-    // react toolkit create action automatically { type: SOME_UNIQUE_IDENTIFIER, payload: 5}
+    // React toolkit create action automatically { type: SOME_UNIQUE_IDENTIFIER, payload: 5}
     dispatch(counterActions.increase(5));
   }
 
